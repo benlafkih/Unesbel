@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orientation Bac Maroc – Trouve ton école idéale</title>
+  <meta name="description" content="Calcule ta moyenne du Bac et découvre les écoles marocaines auxquelles tu es éligible."/>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs, serverTimestamp, query, orderBy }
+      from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    /* ══════════════════════════════════════════
+       🔧 REMPLACE ICI TA CONFIGURATION FIREBASE
+       ══════════════════════════════════════════ */
+    const firebaseConfig = {
+      apiKey:            "",
+      authDomain:        "",
+      projectId:         "",
+      storageBucket:     "",
+      messagingSenderId: "",
+      appId:             ""
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db  = getFirestore(app);
+
+    /* Expose to global scope for script.js */
+    window._db               = db;
+    window._collection       = collection;
+    window._addDoc           = addDoc;
+    window._getDocs          = getDocs;
+    window._serverTimestamp  = serverTimestamp;
+    window._query            = query;
+    window._orderBy          = orderBy;
+    window._firebaseReady    = true;
+    document.dispatchEvent(new Event('firebaseReady'));
+  </script>
+</head>
+<body>
+
+<!-- ═══════════════════ NAVBAR ═══════════════════ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <div class="nav-logo">🎓</div>
+      <div class="nav-title">Orientation<span>Bac</span>Maroc</div>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-icon" id="btnTheme" title="Basculer le thème" aria-label="Dark mode">🌙</button>
+      <button class="btn-admin" id="btnGoAdmin">⚙️ Admin</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════ MAIN PAGE ═══════════════════ -->
+<div class="main-page" id="mainPage">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">🇲🇦 Maroc · Bac 2024–2025</div>
+      <h1>Trouve l'école de tes <span>rêves</span></h1>
+      <p>Saisis ta moyenne régionale et nationale pour découvrir toutes les écoles auxquelles tu es éligible et estimer tes chances d'admission.</p>
+    </div>
+  </section>
+
+  <main class="main">
+
+    <!-- ── FORM CARD ── -->
+    <div class="form-card">
+      <div class="form-card-header">
+        <div class="form-card-icon">📝</div>
+        <div>
+          <div class="form-card-title">Mes informations</div>
+          <div class="form-card-subtitle">Remplis tous les champs pour obtenir tes résultats</div>
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group" style="grid-column: 1 / -1;">
+          <label for="fullName">Nom complet</label>
+          <input type="text" id="fullName" placeholder="Ex: Youness benlafkih" autocomplete="name"/>
+        </div>
+
+        <div class="form-group">
+          <label for="regionalGrade">Note Régionale (/20)</label>
+          <input type="number" id="regionalGrade" placeholder="Ex: 14.50" min="0" max="20" step="0.01"/>
+        </div>
+
+        <div class="form-group">
+          <label for="nationalGrade">Note Nationale (/20)</label>
+          <input type="number" id="nationalGrade" placeholder="Ex: 15.75" min="0" max="20" step="0.01"/>
+        </div>
+
+        <div class="form-group">
+          <label for="stream">Filière Bac</label>
+          <select id="stream">
+            <option value="" disabled selected>Choisir une filière…</option>
+            <option value="SM">Sciences Mathématiques (SM)</option>
+            <option value="SPC">Sciences Physiques-Chimie (SPC)</option>
+            <option value="SVT">Sciences de la Vie et de la Terre (SVT)</option>
+            <option value="STE">Sciences et Technologies Électriques (STE)</option>
+            <option value="STM">Sciences et Technologies Mécaniques (STM)</option>
+            <option value="Eco">Sciences Économiques (Eco)</option>
+            <option value="Lettres">Lettres et Sciences Humaines</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn-calculate" id="btnCalculate">
+        <span class="btn-text">🎯 Calculer mes chances</span>
+        <span class="btn-spinner"></span>
+      </button>
+    </div>
+
+    <!-- ── SCORE SECTION ── -->
+    <section class="score-section" id="scoreSection">
+
+      <!-- Score Card -->
+      <div class="score-card">
+        <div class="score-dial-wrap">
+          <div class="score-dial">
+            <svg width="140" height="140" viewBox="0 0 120 120">
+              <circle class="score-dial-track" cx="60" cy="60" r="54"/>
+              <circle class="score-dial-fill" id="dialFill" cx="60" cy="60" r="54"/>
+            </svg>
+            <div class="score-dial-text">
+              <div class="score-value" id="scoreDisplay">–</div>
+              <div class="score-label">/ 20</div>
+            </div>
+          </div>
+        </div>
+        <div class="score-info">
+          <div class="score-info-name" id="scoreName">–</div>
+          <div class="score-info-stream" id="scoreStream">–</div>
+          <div class="score-breakdown">
+            <div class="score-item">
+              <div class="score-item-val" id="scoreReg">–</div>
+              <div class="score-item-lbl">Note Régionale</div>
+            </div>
+            <div class="score-item">
+              <div class="score-item-val" id="scoreNat">–</div>
+              <div class="score-item-lbl">Note Nationale</div>
+            </div>
+            <div class="score-item">
+              <div class="score-item-val" id="scoreAvg">–</div>
+              <div class="score-item-lbl">Moyenne Finale</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results header + filters -->
+      <div class="results-header">
+        <div>
+          <div class="results-title">Écoles compatibles</div>
+        </div>
+        <div class="results-count" id="resultsCount">0 résultat</div>
+      </div>
+
+      <div class="filters-bar">
+        <input type="text" class="search-input" id="searchInput" placeholder="🔍 Rechercher une école…"/>
+        <select class="filter-select" id="filterCategory">
+          <option value="">Toutes catégories</option>
+          <option value="Ingénierie">Ingénierie</option>
+          <option value="Sciences et Techniques">Sciences et Techniques</option>
+          <option value="Commerce & Gestion">Commerce & Gestion</option>
+          <option value="Économie & Statistiques">Économie & Statistiques</option>
+          <option value="Médecine & Pharmacie">Médecine & Pharmacie</option>
+          <option value="Architecture">Architecture</option>
+          <option value="Technologie">Technologie</option>
+          <option value="Informatique & Management">Informatique & Management</option>
+          <option value="Agronomie & Vétérinaire">Agronomie & Vétérinaire</option>
+          <option value="Droit & Sciences Sociales">Droit & Sciences Sociales</option>
+          <option value="Lettres & Sciences Humaines">Lettres & Sciences Humaines</option>
+          <option value="Communication & Journalisme">Communication & Journalisme</option>
+          <option value="Éducation & Enseignement">Éducation & Enseignement</option>
+          <option value="Ingénierie Biomédicale">Ingénierie Biomédicale</option>
+        </select>
+        <select class="filter-select" id="filterCity">
+          <option value="">Toutes villes</option>
+          <option value="Casablanca">Casablanca</option>
+          <option value="Rabat">Rabat</option>
+          <option value="Fès">Fès</option>
+          <option value="Marrakech">Marrakech</option>
+          <option value="Tanger">Tanger</option>
+          <option value="Agadir">Agadir</option>
+          <option value="Oujda">Oujda</option>
+          <option value="Meknès">Meknès</option>
+          <option value="Salé">Salé</option>
+          <option value="Settat">Settat</option>
+          <option value="El Jadida">El Jadida</option>
+          <option value="Mohammedia">Mohammedia</option>
+          <option value="Khouribga">Khouribga</option>
+          <option value="Safi">Safi</option>
+          <option value="Béni Mellal">Béni Mellal</option>
+          <option value="Tétouan">Tétouan</option>
+          <option value="Guelmim">Guelmim</option>
+        </select>
+        <select class="filter-select" id="filterChance">
+          <option value="">Toutes chances</option>
+          <option value="high">🟢 Forte chance</option>
+          <option value="medium">🟡 Chance moyenne</option>
+          <option value="low">🔴 Faible chance</option>
+        </select>
+      </div>
+
+      <!-- Schools grid -->
+      <div class="schools-grid" id="schoolsGrid">
+        <!-- Filled by JS -->
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 <span>Orientation Bac Maroc</span> · Données indicatives – se référer aux établissements pour confirmation officielle</p>
+  </footer>
+</div><!-- /main-page -->
+
+
+<!-- ═══════════════════ ADMIN PAGE ═══════════════════ -->
+<div class="admin-page" id="adminPage">
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <div class="nav-logo">⚙️</div>
+        <div class="nav-title">Admin <span>Dashboard</span></div>
+      </div>
+      <div class="nav-actions">
+        <button class="btn-icon" id="btnThemeAdmin" title="Thème">🌙</button>
+        <button class="btn-back" id="btnBack">← Retour</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="admin-hero">
+    <div class="admin-hero-inner">
+      <div>
+        <h2>Tableau de bord</h2>
+        <p>Vue d'ensemble des utilisateurs et calculs effectués</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="admin-main">
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-card-icon yellow">👥</div>
+        <div class="stat-val" id="statTotal">–</div>
+        <div class="stat-lbl">Étudiants enregistrés</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-icon green">📊</div>
+        <div class="stat-val" id="statCalcs">–</div>
+        <div class="stat-lbl">Calculs effectués</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-icon blue">🏆</div>
+        <div class="stat-val" id="statAvgMoy">–</div>
+        <div class="stat-lbl">Moyenne générale</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-icon purple">🌟</div>
+        <div class="stat-val" id="statTopStream">–</div>
+        <div class="stat-lbl">Filière dominante</div>
+      </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="admin-toolbar">
+      <input type="text" class="admin-search" id="adminSearch" placeholder="🔍 Rechercher par nom…"/>
+      <button class="btn-export" id="btnExport">⬇️ Exporter CSV</button>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nom complet</th>
+            <th>Filière</th>
+            <th>Note Rég.</th>
+            <th>Note Nat.</th>
+            <th>Moyenne</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="studentsTableBody">
+          <tr>
+            <td colspan="7" class="table-loading">
+              <div class="loader"></div>
+              <div style="color:var(--text-muted);font-size:0.85rem">Chargement des données…</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 <span>Orientation Bac Maroc</span> · Panneau d'administration</p>
+  </footer>
+</div><!-- /admin-page -->
+
+<!-- Toast -->
+<div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
