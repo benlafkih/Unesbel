@@ -1,0 +1,802 @@
+[
+  {
+    "id": 1,
+    "name": "École Nationale Polytechnique de Haj Ahmed Mansour (EMI)",
+    "shortName": "EMI",
+    "city": "Rabat",
+    "category": "Ingénierie",
+    "streams": ["SM", "SPC", "STE"],
+    "thresholds": {
+      "2023": 17.2,
+      "2022": 17.05,
+      "2021": 16.95,
+      "2020": 16.8,
+      "2019": 16.9
+    },
+    "description": "La grande école d'ingénieurs publique du Maroc, fondée en 1959."
+  },
+  {
+    "id": 2,
+    "name": "École Nationale des Sciences Appliquées de Casablanca (ENSA Casa)",
+    "shortName": "ENSA Casablanca",
+    "city": "Casablanca",
+    "category": "Ingénierie",
+    "streams": ["SM", "SPC", "STE", "STM"],
+    "thresholds": {
+      "2023": 15.8,
+      "2022": 15.6,
+      "2021": 15.4,
+      "2020": 15.2,
+      "2019": 15.5
+    },
+    "description": "Formation d'ingénieurs en sciences appliquées à Casablanca."
+  },
+  {
+    "id": 3,
+    "name": "École Nationale des Sciences Appliquées de Rabat (ENSA Rabat)",
+    "shortName": "ENSA Rabat",
+    "city": "Rabat",
+    "category": "Ingénierie",
+    "streams": ["SM", "SPC", "STE", "STM"],
+    "thresholds": {
+      "2023": 15.9,
+      "2022": 15.7,
+      "2021": 15.5,
+      "2020": 15.3,
+      "2019": 15.6
+    },
+    "description": "École d'ingénieurs reconnue, basée dans la capitale."
+  },
+  {
+    "id": 4,
+    "name": "École Nationale des Sciences Appliquées de Marrakech",
+    "shortName": "ENSA Marrakech",
+    "city": "Marrakech",
+    "category": "Ingénierie",
+    "streams": ["SM", "SPC", "STE", "STM"],
+    "thresholds": {
+      "2023": 15.3,
+      "2022": 15.1,
+      "2021": 14.9,
+      "2020": 14.7,
+      "2019": 15.0
+    },
+    "description": "Formation en ingénierie dans la ville ocre."
+  },
+  {
+    "id": 5,
+    "name": "École Nationale des Sciences Appliquées de Fès",
+    "shortName": "ENSA Fès",
+    "city": "Fès",
+    "category": "Ingénierie",
+    "streams": ["SM", "SPC", "STE", "STM"],
+    "thresholds": {
+      "2023": 15.1,
+      "2022": 14.9,
+      "2021": 14.7,
+      "2020": 14.5,
+      "2019": 14.8
+    },
+    "description": "Une des ENSAs les plus dynamiques du Royaume."
+  },
+  {
+    "id": 6,
+    "name": "École Nationale des Sciences Appliquées de Safi",
+    "shortName": "ENSA Safi",
+    "city": "Safi",
+    "category": "Ingénierie",
+    "streams": ["SM", "SPC", "STE", "STM"],
+    "thresholds": {
+      "2023": 14.2,
+      "2022": 14.0,
+      "2021": 13.8,
+      "2020": 13.6,
+      "2019": 13.9
+    },
+    "description": "École d'ingénieurs avec spécialités en industrie et phosphates."
+  },
+  {
+    "id": 7,
+    "name": "École Nationale des Sciences Appliquées de Khouribga",
+    "shortName": "ENSA Khouribga",
+    "city": "Khouribga",
+    "category": "Ingénierie",
+    "streams": ["SM", "SPC", "STE", "STM"],
+    "thresholds": {
+      "2023": 14.0,
+      "2022": 13.8,
+      "2021": 13.6,
+      "2020": 13.4,
+      "2019": 13.7
+    },
+    "description": "Spécialisée dans les mines, énergie et génie industriel."
+  },
+  {
+    "id": 8,
+    "name": "École Nationale des Sciences Appliquées de Béni Mellal",
+    "shortName": "ENSA Béni Mellal",
+    "city": "Béni Mellal",
+    "category": "Ingénierie",
+    "streams": ["SM", "SPC", "STE", "STM"],
+    "thresholds": {
+      "2023": 13.8,
+      "2022": 13.6,
+      "2021": 13.4,
+      "2020": 13.2,
+      "2019": 13.5
+    },
+    "description": "Formation d'ingénieurs au cœur du Maroc central."
+  },
+  {
+    "id": 9,
+    "name": "École Nationale des Sciences Appliquées d'Agadir",
+    "shortName": "ENSA Agadir",
+    "city": "Agadir",
+    "category": "Ingénierie",
+    "streams": ["SM", "SPC", "STE", "STM"],
+    "thresholds": {
+      "2023": 14.5,
+      "2022": 14.3,
+      "2021": 14.1,
+      "2020": 13.9,
+      "2019": 14.2
+    },
+    "description": "École d'ingénieurs dans la capitale du Souss."
+  },
+  {
+    "id": 10,
+    "name": "École Nationale des Sciences Appliquées de Tétouan",
+    "shortName": "ENSA Tétouan",
+    "city": "Tétouan",
+    "category": "Ingénierie",
+    "streams": ["SM", "SPC", "STE", "STM"],
+    "thresholds": {
+      "2023": 13.5,
+      "2022": 13.3,
+      "2021": 13.1,
+      "2020": 12.9,
+      "2019": 13.2
+    },
+    "description": "Formation d'ingénieurs dans le nord du Maroc."
+  },
+  {
+    "id": 11,
+    "name": "École Nationale des Sciences Appliquées de Tanger",
+    "shortName": "ENSA Tanger",
+    "city": "Tanger",
+    "category": "Ingénierie",
+    "streams": ["SM", "SPC", "STE", "STM"],
+    "thresholds": {
+      "2023": 14.8,
+      "2022": 14.6,
+      "2021": 14.4,
+      "2020": 14.2,
+      "2019": 14.5
+    },
+    "description": "École d'ingénieurs dans la perle du Nord."
+  },
+  {
+    "id": 12,
+    "name": "École Nationale des Sciences Appliquées d'El Jadida",
+    "shortName": "ENSA El Jadida",
+    "city": "El Jadida",
+    "category": "Ingénierie",
+    "streams": ["SM", "SPC", "STE", "STM"],
+    "thresholds": {
+      "2023": 13.6,
+      "2022": 13.4,
+      "2021": 13.2,
+      "2020": 13.0,
+      "2019": 13.3
+    },
+    "description": "Formation d'ingénieurs sur la côte atlantique."
+  },
+  {
+    "id": 13,
+    "name": "Faculté des Sciences et Techniques de Mohammedia (FSTM)",
+    "shortName": "FST Mohammedia",
+    "city": "Mohammedia",
+    "category": "Sciences et Techniques",
+    "streams": ["SM", "SPC", "SVT", "STE", "STM"],
+    "thresholds": {
+      "2023": 13.0,
+      "2022": 12.8,
+      "2021": 12.6,
+      "2020": 12.4,
+      "2019": 12.7
+    },
+    "description": "Faculté reconnue pour ses filières techniques et scientifiques."
+  },
+  {
+    "id": 14,
+    "name": "Faculté des Sciences et Techniques de Fès",
+    "shortName": "FST Fès",
+    "city": "Fès",
+    "category": "Sciences et Techniques",
+    "streams": ["SM", "SPC", "SVT", "STE", "STM"],
+    "thresholds": {
+      "2023": 12.8,
+      "2022": 12.6,
+      "2021": 12.4,
+      "2020": 12.2,
+      "2019": 12.5
+    },
+    "description": "Filières variées en sciences exactes et technologie."
+  },
+  {
+    "id": 15,
+    "name": "Faculté des Sciences et Techniques de Marrakech",
+    "shortName": "FST Marrakech",
+    "city": "Marrakech",
+    "category": "Sciences et Techniques",
+    "streams": ["SM", "SPC", "SVT", "STE", "STM"],
+    "thresholds": {
+      "2023": 12.5,
+      "2022": 12.3,
+      "2021": 12.1,
+      "2020": 11.9,
+      "2019": 12.2
+    },
+    "description": "Sciences et techniques au cœur de la ville ocre."
+  },
+  {
+    "id": 16,
+    "name": "Institut National de Statistique et d'Économie Appliquée (INSEA)",
+    "shortName": "INSEA",
+    "city": "Rabat",
+    "category": "Économie & Statistiques",
+    "streams": ["SM", "SPC", "Eco"],
+    "thresholds": {
+      "2023": 16.0,
+      "2022": 15.8,
+      "2021": 15.6,
+      "2020": 15.4,
+      "2019": 15.7
+    },
+    "description": "Formation en statistiques appliquées et économétrie."
+  },
+  {
+    "id": 17,
+    "name": "École Nationale de Commerce et de Gestion de Casablanca (ENCG Casa)",
+    "shortName": "ENCG Casablanca",
+    "city": "Casablanca",
+    "category": "Commerce & Gestion",
+    "streams": ["SM", "SPC", "Eco", "Lettres"],
+    "thresholds": {
+      "2023": 15.5,
+      "2022": 15.3,
+      "2021": 15.1,
+      "2020": 14.9,
+      "2019": 15.2
+    },
+    "description": "L'ENCG la plus sélective, dans la capitale économique."
+  },
+  {
+    "id": 18,
+    "name": "École Nationale de Commerce et de Gestion de Fès",
+    "shortName": "ENCG Fès",
+    "city": "Fès",
+    "category": "Commerce & Gestion",
+    "streams": ["SM", "SPC", "Eco", "Lettres"],
+    "thresholds": {
+      "2023": 14.8,
+      "2022": 14.6,
+      "2021": 14.4,
+      "2020": 14.2,
+      "2019": 14.5
+    },
+    "description": "Formation en commerce et gestion à Fès."
+  },
+  {
+    "id": 19,
+    "name": "École Nationale de Commerce et de Gestion de Marrakech",
+    "shortName": "ENCG Marrakech",
+    "city": "Marrakech",
+    "category": "Commerce & Gestion",
+    "streams": ["SM", "SPC", "Eco", "Lettres"],
+    "thresholds": {
+      "2023": 14.5,
+      "2022": 14.3,
+      "2021": 14.1,
+      "2020": 13.9,
+      "2019": 14.2
+    },
+    "description": "Business school marocaine dans la ville ocre."
+  },
+  {
+    "id": 20,
+    "name": "École Nationale de Commerce et de Gestion de Tanger",
+    "shortName": "ENCG Tanger",
+    "city": "Tanger",
+    "category": "Commerce & Gestion",
+    "streams": ["SM", "SPC", "Eco", "Lettres"],
+    "thresholds": {
+      "2023": 14.2,
+      "2022": 14.0,
+      "2021": 13.8,
+      "2020": 13.6,
+      "2019": 13.9
+    },
+    "description": "ENCG stratégiquement située dans la capitale du Nord."
+  },
+  {
+    "id": 21,
+    "name": "École Nationale de Commerce et de Gestion de Settat",
+    "shortName": "ENCG Settat",
+    "city": "Settat",
+    "category": "Commerce & Gestion",
+    "streams": ["SM", "SPC", "Eco", "Lettres"],
+    "thresholds": {
+      "2023": 13.8,
+      "2022": 13.6,
+      "2021": 13.4,
+      "2020": 13.2,
+      "2019": 13.5
+    },
+    "description": "École de commerce et de gestion à Settat."
+  },
+  {
+    "id": 22,
+    "name": "École Nationale de Commerce et de Gestion d'Agadir",
+    "shortName": "ENCG Agadir",
+    "city": "Agadir",
+    "category": "Commerce & Gestion",
+    "streams": ["SM", "SPC", "Eco", "Lettres"],
+    "thresholds": {
+      "2023": 14.0,
+      "2022": 13.8,
+      "2021": 13.6,
+      "2020": 13.4,
+      "2019": 13.7
+    },
+    "description": "Formation en commerce dans le grand Sud du Maroc."
+  },
+  {
+    "id": 23,
+    "name": "École Nationale de Commerce et de Gestion d'Oujda",
+    "shortName": "ENCG Oujda",
+    "city": "Oujda",
+    "category": "Commerce & Gestion",
+    "streams": ["SM", "SPC", "Eco", "Lettres"],
+    "thresholds": {
+      "2023": 13.5,
+      "2022": 13.3,
+      "2021": 13.1,
+      "2020": 12.9,
+      "2019": 13.2
+    },
+    "description": "ENCG dans la capitale de l'Oriental."
+  },
+  {
+    "id": 24,
+    "name": "École Nationale de Commerce et de Gestion d'El Jadida",
+    "shortName": "ENCG El Jadida",
+    "city": "El Jadida",
+    "category": "Commerce & Gestion",
+    "streams": ["SM", "SPC", "Eco", "Lettres"],
+    "thresholds": {
+      "2023": 13.3,
+      "2022": 13.1,
+      "2021": 12.9,
+      "2020": 12.7,
+      "2019": 13.0
+    },
+    "description": "Commerce et gestion en bord de mer."
+  },
+  {
+    "id": 25,
+    "name": "Faculté de Médecine et de Pharmacie de Casablanca",
+    "shortName": "Médecine Casablanca",
+    "city": "Casablanca",
+    "category": "Médecine & Pharmacie",
+    "streams": ["SPC", "SVT"],
+    "thresholds": {
+      "2023": 17.0,
+      "2022": 16.9,
+      "2021": 16.8,
+      "2020": 16.7,
+      "2019": 16.8
+    },
+    "description": "Faculté de référence pour les études médicales au Maroc."
+  },
+  {
+    "id": 26,
+    "name": "Faculté de Médecine et de Pharmacie de Rabat",
+    "shortName": "Médecine Rabat",
+    "city": "Rabat",
+    "category": "Médecine & Pharmacie",
+    "streams": ["SPC", "SVT"],
+    "thresholds": {
+      "2023": 17.1,
+      "2022": 17.0,
+      "2021": 16.9,
+      "2020": 16.8,
+      "2019": 16.9
+    },
+    "description": "La faculté de médecine la plus ancienne du Royaume."
+  },
+  {
+    "id": 27,
+    "name": "Faculté de Médecine et de Pharmacie de Fès",
+    "shortName": "Médecine Fès",
+    "city": "Fès",
+    "category": "Médecine & Pharmacie",
+    "streams": ["SPC", "SVT"],
+    "thresholds": {
+      "2023": 16.8,
+      "2022": 16.7,
+      "2021": 16.6,
+      "2020": 16.5,
+      "2019": 16.6
+    },
+    "description": "Formation médicale et pharmaceutique à Fès."
+  },
+  {
+    "id": 28,
+    "name": "Faculté de Médecine et de Pharmacie de Marrakech",
+    "shortName": "Médecine Marrakech",
+    "city": "Marrakech",
+    "category": "Médecine & Pharmacie",
+    "streams": ["SPC", "SVT"],
+    "thresholds": {
+      "2023": 16.5,
+      "2022": 16.4,
+      "2021": 16.3,
+      "2020": 16.2,
+      "2019": 16.3
+    },
+    "description": "Études médicales dans la ville des quatre dynasties."
+  },
+  {
+    "id": 29,
+    "name": "Faculté de Médecine Dentaire de Casablanca",
+    "shortName": "Médecine Dentaire Casa",
+    "city": "Casablanca",
+    "category": "Médecine & Pharmacie",
+    "streams": ["SPC", "SVT"],
+    "thresholds": {
+      "2023": 16.3,
+      "2022": 16.1,
+      "2021": 15.9,
+      "2020": 15.7,
+      "2019": 16.0
+    },
+    "description": "Spécialisation en chirurgie dentaire."
+  },
+  {
+    "id": 30,
+    "name": "Institut Supérieur de l'Information et de la Communication (ISIC)",
+    "shortName": "ISIC",
+    "city": "Rabat",
+    "category": "Communication & Journalisme",
+    "streams": ["SM", "SPC", "Eco", "Lettres", "SVT"],
+    "thresholds": {
+      "2023": 14.0,
+      "2022": 13.8,
+      "2021": 13.6,
+      "2020": 13.4,
+      "2019": 13.7
+    },
+    "description": "Formation en journalisme, communication et médias."
+  },
+  {
+    "id": 31,
+    "name": "École Supérieure de Technologie de Casablanca (EST Casa)",
+    "shortName": "EST Casablanca",
+    "city": "Casablanca",
+    "category": "Technologie",
+    "streams": ["SM", "SPC", "STE", "STM"],
+    "thresholds": {
+      "2023": 13.5,
+      "2022": 13.3,
+      "2021": 13.1,
+      "2020": 12.9,
+      "2019": 13.2
+    },
+    "description": "Formation de techniciens supérieurs en 2 ans (DUT)."
+  },
+  {
+    "id": 32,
+    "name": "École Supérieure de Technologie de Salé",
+    "shortName": "EST Salé",
+    "city": "Salé",
+    "category": "Technologie",
+    "streams": ["SM", "SPC", "STE", "STM"],
+    "thresholds": {
+      "2023": 13.0,
+      "2022": 12.8,
+      "2021": 12.6,
+      "2020": 12.4,
+      "2019": 12.7
+    },
+    "description": "DUT et licences professionnelles en technologie."
+  },
+  {
+    "id": 33,
+    "name": "École Supérieure de Technologie de Fès",
+    "shortName": "EST Fès",
+    "city": "Fès",
+    "category": "Technologie",
+    "streams": ["SM", "SPC", "STE", "STM"],
+    "thresholds": {
+      "2023": 12.8,
+      "2022": 12.6,
+      "2021": 12.4,
+      "2020": 12.2,
+      "2019": 12.5
+    },
+    "description": "Technologie appliquée à Fès."
+  },
+  {
+    "id": 34,
+    "name": "École Supérieure de Technologie de Meknès",
+    "shortName": "EST Meknès",
+    "city": "Meknès",
+    "category": "Technologie",
+    "streams": ["SM", "SPC", "STE", "STM"],
+    "thresholds": {
+      "2023": 12.5,
+      "2022": 12.3,
+      "2021": 12.1,
+      "2020": 11.9,
+      "2019": 12.2
+    },
+    "description": "Formation technologique dans la ville des Mille et Une Nuits."
+  },
+  {
+    "id": 35,
+    "name": "École Supérieure de Technologie de Guelmim",
+    "shortName": "EST Guelmim",
+    "city": "Guelmim",
+    "category": "Technologie",
+    "streams": ["SM", "SPC", "STE", "STM"],
+    "thresholds": {
+      "2023": 11.8,
+      "2022": 11.6,
+      "2021": 11.4,
+      "2020": 11.2,
+      "2019": 11.5
+    },
+    "description": "Porte du désert, technologie et innovation."
+  },
+  {
+    "id": 36,
+    "name": "Institut Agronomique et Vétérinaire Hassan II (IAV)",
+    "shortName": "IAV Hassan II",
+    "city": "Rabat",
+    "category": "Agronomie & Vétérinaire",
+    "streams": ["SPC", "SVT", "SM"],
+    "thresholds": {
+      "2023": 16.5,
+      "2022": 16.3,
+      "2021": 16.1,
+      "2020": 15.9,
+      "2019": 16.2
+    },
+    "description": "Le leader des sciences agronomiques et vétérinaires au Maroc."
+  },
+  {
+    "id": 37,
+    "name": "École Nationale Forestière des Ingénieurs (ENFI)",
+    "shortName": "ENFI",
+    "city": "Salé",
+    "category": "Agronomie & Vétérinaire",
+    "streams": ["SPC", "SVT", "SM"],
+    "thresholds": {
+      "2023": 15.0,
+      "2022": 14.8,
+      "2021": 14.6,
+      "2020": 14.4,
+      "2019": 14.7
+    },
+    "description": "Formation d'ingénieurs forestiers et environnementaux."
+  },
+  {
+    "id": 38,
+    "name": "Faculté des Sciences Juridiques, Économiques et Sociales de Casablanca",
+    "shortName": "FSJES Casablanca",
+    "city": "Casablanca",
+    "category": "Droit & Sciences Sociales",
+    "streams": ["Eco", "Lettres", "SM", "SPC"],
+    "thresholds": {
+      "2023": 11.5,
+      "2022": 11.3,
+      "2021": 11.1,
+      "2020": 10.9,
+      "2019": 11.2
+    },
+    "description": "Droit, économie et sciences sociales à Casablanca."
+  },
+  {
+    "id": 39,
+    "name": "Faculté des Sciences Juridiques, Économiques et Sociales de Rabat",
+    "shortName": "FSJES Rabat",
+    "city": "Rabat",
+    "category": "Droit & Sciences Sociales",
+    "streams": ["Eco", "Lettres", "SM", "SPC"],
+    "thresholds": {
+      "2023": 11.8,
+      "2022": 11.6,
+      "2021": 11.4,
+      "2020": 11.2,
+      "2019": 11.5
+    },
+    "description": "Droit, économie et gestion publique à Rabat."
+  },
+  {
+    "id": 40,
+    "name": "Faculté des Sciences Juridiques, Économiques et Sociales de Fès",
+    "shortName": "FSJES Fès",
+    "city": "Fès",
+    "category": "Droit & Sciences Sociales",
+    "streams": ["Eco", "Lettres", "SM", "SPC"],
+    "thresholds": {
+      "2023": 11.3,
+      "2022": 11.1,
+      "2021": 10.9,
+      "2020": 10.7,
+      "2019": 11.0
+    },
+    "description": "Études juridiques et économiques dans la médina millénaire."
+  },
+  {
+    "id": 41,
+    "name": "Faculté des Lettres et des Sciences Humaines de Rabat",
+    "shortName": "FLSH Rabat",
+    "city": "Rabat",
+    "category": "Lettres & Sciences Humaines",
+    "streams": ["Lettres", "Eco"],
+    "thresholds": {
+      "2023": 10.5,
+      "2022": 10.3,
+      "2021": 10.1,
+      "2020": 10.0,
+      "2019": 10.2
+    },
+    "description": "Lettres, langues et sciences humaines à Rabat."
+  },
+  {
+    "id": 42,
+    "name": "Faculté des Lettres et des Sciences Humaines de Casablanca",
+    "shortName": "FLSH Casablanca",
+    "city": "Casablanca",
+    "category": "Lettres & Sciences Humaines",
+    "streams": ["Lettres", "Eco"],
+    "thresholds": {
+      "2023": 10.3,
+      "2022": 10.1,
+      "2021": 10.0,
+      "2020": 10.0,
+      "2019": 10.0
+    },
+    "description": "Littérature, philosophie et langues étrangères."
+  },
+  {
+    "id": 43,
+    "name": "École Supérieure d'Informatique et du Management (ESIM)",
+    "shortName": "ESIM",
+    "city": "Casablanca",
+    "category": "Informatique & Management",
+    "streams": ["SM", "SPC", "STE"],
+    "thresholds": {
+      "2023": 14.8,
+      "2022": 14.6,
+      "2021": 14.4,
+      "2020": 14.2,
+      "2019": 14.5
+    },
+    "description": "Informatique et management des systèmes d'information."
+  },
+  {
+    "id": 44,
+    "name": "Institut Supérieur d'Ingénierie et des Affaires (ISGA)",
+    "shortName": "ISGA",
+    "city": "Casablanca",
+    "category": "Ingénierie",
+    "streams": ["SM", "SPC", "STE", "STM", "Eco"],
+    "thresholds": {
+      "2023": 13.0,
+      "2022": 12.8,
+      "2021": 12.6,
+      "2020": 12.4,
+      "2019": 12.7
+    },
+    "description": "École privée reconnue en ingénierie et gestion."
+  },
+  {
+    "id": 45,
+    "name": "École Nationale d'Architecture de Rabat (ENA)",
+    "shortName": "ENA Rabat",
+    "city": "Rabat",
+    "category": "Architecture",
+    "streams": ["SM", "SPC", "STE", "STM", "Lettres"],
+    "thresholds": {
+      "2023": 14.5,
+      "2022": 14.3,
+      "2021": 14.1,
+      "2020": 13.9,
+      "2019": 14.2
+    },
+    "description": "Formation d'architectes diplômés d'État au Maroc."
+  },
+  {
+    "id": 46,
+    "name": "École Nationale d'Architecture de Marrakech",
+    "shortName": "ENA Marrakech",
+    "city": "Marrakech",
+    "category": "Architecture",
+    "streams": ["SM", "SPC", "STE", "STM", "Lettres"],
+    "thresholds": {
+      "2023": 14.0,
+      "2022": 13.8,
+      "2021": 13.6,
+      "2020": 13.4,
+      "2019": 13.7
+    },
+    "description": "Architecture et patrimoine à Marrakech."
+  },
+  {
+    "id": 47,
+    "name": "École Nationale d'Architecture de Fès",
+    "shortName": "ENA Fès",
+    "city": "Fès",
+    "category": "Architecture",
+    "streams": ["SM", "SPC", "STE", "STM", "Lettres"],
+    "thresholds": {
+      "2023": 13.8,
+      "2022": 13.6,
+      "2021": 13.4,
+      "2020": 13.2,
+      "2019": 13.5
+    },
+    "description": "Architecture inspirée par la médina classée UNESCO."
+  },
+  {
+    "id": 48,
+    "name": "Institut Supérieur de la Magistrature",
+    "shortName": "ISM",
+    "city": "Rabat",
+    "category": "Droit & Sciences Sociales",
+    "streams": ["Lettres", "Eco"],
+    "thresholds": {
+      "2023": 15.5,
+      "2022": 15.3,
+      "2021": 15.1,
+      "2020": 14.9,
+      "2019": 15.2
+    },
+    "description": "Formation des magistrats et juristes de haut niveau."
+  },
+  {
+    "id": 49,
+    "name": "École Normale Supérieure de Rabat (ENS)",
+    "shortName": "ENS Rabat",
+    "city": "Rabat",
+    "category": "Éducation & Enseignement",
+    "streams": ["SM", "SPC", "SVT", "STE", "Lettres", "Eco"],
+    "thresholds": {
+      "2023": 14.2,
+      "2022": 14.0,
+      "2021": 13.8,
+      "2020": 13.6,
+      "2019": 13.9
+    },
+    "description": "Former les enseignants et chercheurs de demain."
+  },
+  {
+    "id": 50,
+    "name": "Institut Supérieur de Génie Biomédical (ISGB)",
+    "shortName": "ISGB",
+    "city": "Rabat",
+    "category": "Ingénierie Biomédicale",
+    "streams": ["SPC", "SVT", "SM"],
+    "thresholds": {
+      "2023": 15.8,
+      "2022": 15.6,
+      "2021": 15.4,
+      "2020": 15.2,
+      "2019": 15.5
+    },
+    "description": "Génie biomédical à l'interface de la santé et de l'ingénierie."
+  }
+]
